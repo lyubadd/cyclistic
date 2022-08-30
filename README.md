@@ -259,4 +259,211 @@ WHERE TRUE;
 ```
 
 ### 5. Analyze Data
+
+In the “Analyze” phase, I structured my work according to 7 questions:
+
+1. What **proportion of all Cyclistic rides** in the given time period do casual rides represent?
+2. Do casual and annual member rides differ in terms of average **ride length**?
+3. Do casual riders prefer **classic or electric bikes**? Does their preference differ from members’?
+4. Does the use of Cyclistic bikes vary **throughout the year** for casual users compared to members? 
+5. Does the use of Cyclistic bikes vary **throughout the week** for casual users comapred to members? 
+6. Does the use of Cyclistic bikes vary **throughout the day** for casual users compared to members? 
+7. What are the **most popular stations** for casual users compared to those of members? 
+
+I believe that answering these would **make the most of the available data**, giving us an **insight into casual riders’ use of Cyclistic bikes and how it differs from members’. 
+
+This insight would allow the marketing team to **tailor the new strategy to casual users’ behaviors and preferences**.
+
+Let’s look into each question in more detail and find the answer.
+
+1. What **proportion of all Cyclistic rides** in the given time period do casual rides represent?
+
+As the new marketing strategy would focus on converting casual riders into members, it is important to be aware of what proportion of all users are casual riders as the target group of the marketing campaign.
+
+* calculate the number of rides by type of rider
+
+```
+SELECT member_casual, COUNT(ride_id) AS number_rides
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+GROUP BY member_casual;
+```
+We find out that In the past 12 months **members were the main users** but **casual rides come close at 44% of all Cyclistic rides** - holding **big potential for converting casual riders into members**.
+ 
+2. Do casual and annual member rides differ in terms of average **ride length**?
+
+As the pricing depends on a ride’s length (e.g. a single ride costs $0.16 a minute for non-members, while for member rides under 45 minutes are free), we should investigate the average ride length of both types of users. It is important that annual membership makes financial sense to casual riders.
+
+* calculate the average length of ride by user type
+ 
+```
+SELECT member_casual, AVG(ride_length_new) AS avg_ride_length_min
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+GROUP BY member_casual;
+```
+**Casual rides last twice as long as member ones**. This is important to keep in mind when the marketing team looks into **membership pricing**.
+ 
+3. Do casual riders prefer **classic or electric bikes**? Does their preference differ from members’?
+
+Knowing the preferred bike type of casual riders, can inform the marketing strategy's appeal to potential preferences.
+
+* calculate the number of rides by type of rider by type of bike (classic vs electric) 
+ 
+```
+SELECT member_casual, rideable_type, COUNT(*) AS number_rideabletype
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+GROUP BY rideable_type, member_casual
+ORDER BY number_rideabletype;
+```
+**Casual riders tend to have a slight preference for electric bikes**, while **two-thirds of members choose classic bikes**.
+
+* check if there’s been an increase in the use of electric bikes among casual riders over time suggesting an increase in popularity
+
+```
+SELECT COUNT(ride_id) AS number_rides_electric_casual, month
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+WHERE member_casual = "casual" AND rideable_type IN ('docked_bike', 'electric_bike')
+GROUP BY month
+ORDER BY number_rides_electric_casual;
+```
+
+We find out that there hasn’t been and that the use of electric bikes follows the general seasonal pattern (see question 4 below).
+
+4. Does the use of Cyclistic bikes vary **throughout the year** for casual users compared to members? 
+
+It is important to be aware of month-to-month differences in order to make sure that annual membership makes financial sense for casual riders and they do not only use Cyclistic bikes in the summer months.
+
+* calculate the number of rides by type of rider by month
+
+```
+SELECT month, member_casual, COUNT(*) AS trips_per_month
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+GROUP BY month, member_casual
+ORDER BY month;
+```
+
+Trips peak in the summer and drop in winter for both types of users. Importantly, casual riders overtake members from mid-May until mid-August.
+  
+5. Does the use of Cyclistic bikes vary **throughout the week** for casual users comapred to members? 
+
+This analysis will help us understand riding patterns better and may offer an insight into potential customizing of the annual membership product.
+
+* calculate the number of rides by type of rider by day of the week
+
+```
+SELECT day_of_week, member_casual, COUNT(*) AS trips_per_dayweek
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+GROUP BY day_of_week, member_casual
+ORDER BY day_of_week;
+```
+Casual riders are most active at the weekend, members - during the working week:
+
+6. Does the use of Cyclistic bikes vary **throughout the day** for casual users compared to members? 
+
+As above, this analysis will help us understand riding patterns better and may offer an insight into potential customizing of the annual membership product.
+
+* calculate the number of rides by type of rider by hour of day
+
+```
+SELECT hour, member_casual, COUNT(*) AS number_rides_hour
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+GROUP BY hour, member_casual
+ORDER BY hour ASC;
+```
+
+Casual rides increase steadily as the day goes by peaking at 5pm. They are also more active at night. Member rides peak during rush hours - both morning and evening - but like casual members the highest peak is at 5pm.
+
+7. What are the **most popular stations** for casual users compared to those of members? 
+
+It would be useful to know at which stations we can reach the most casual riders with our marketing campaign. 
+
+* find the top 20 most popular start stations for casual riders
+
+```
+SELECT count(*) as num_rides, start_station_name, AVG(start_lat), AVG(start_lng)
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+WHERE start_station_name IS NOT NULL AND member_casual = 'casual'
+GROUP BY start_station_name
+ORDER BY num_rides DESC
+LIMIT 20;
+```
+
+* find the top 20 most popular end stations for casual riders
+
+```
+SELECT count(*) as num_rides, end_station_name, AVG(end_lat), AVG(end_lng)
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+WHERE end_station_name IS NOT NULL AND member_casual = 'casual'
+GROUP BY end_station_name
+ORDER BY num_rides DESC
+LIMIT 20;
+```
+
+* find the top 20 most popular start stations for members
+
+```
+SELECT count(*) as num_rides, start_station_name, AVG(start_lat), AVG(start_lng)
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+WHERE start_station_name IS NOT NULL AND member_casual = 'member'
+GROUP BY start_station_name
+ORDER BY num_rides DESC
+LIMIT 20;
+```
+
+* find the top 20 most popular end stations for members
+
+```
+SELECT count(*) as num_rides, end_station_name, AVG(end_lat), AVG(end_lng)
+FROM `leafy-star-345020.Cyclistic.202105_202204`
+WHERE end_station_name IS NOT NULL AND member_casual = 'member'
+GROUP BY end_station_name
+ORDER BY num_rides DESC
+LIMIT 20;
+```
+The top 20 start and end stations for casual riders are:
+ 
+* Streeter Dr & Grand Ave
+* Millennium Park
+* Michigan Ave & Oak St
+* Shedd Aquarium
+* Theater on the Lake
+* Wells St & Concord Ln
+* DuSable Lake Shore Dr & Monroe St
+* DuSable Lake Shore Dr & North Blvd
+* Wabash Ave & Grand Ave
+* Clark St & Lincoln Ave
+* Wells St & Elm St
+* Clark St & Armitage Ave
+* Clark St & Elm St
+* Indiana Ave & Roosevelt Rd
+* Lake Shore Dr & North Blvd
+* New St & Illinois St
+* Dusable Harbor
+* Lake Shore Dr & Monroe St
+* Michigan Ave & Lake St
+* Michigan Ave & Washington St
+
+ 
+Map (full interactive data visualization on Tableau Public here)
+ 
 ### 6. Recommendations 
+
+The data analysis reveals that in the past 12 months between May 2021 and April 2022 casual riders made up 44% of all Cyclistic users - holding big potential for converting casual riders into members.
+
+To convert casual riders, the company should offer an annual membership product that is customized to their specific mobility needs characterized by: 
+            ● Longer rides.
+            ● Slight preference for electric bikes.
+            ● Seasonal: casual rides peak and overtake member rides from mid-May till mid-August. 
+            ● Casual riders are most active at the weekend, members - during the working week.
+            ● Higher level of activity on weekends and in the evening and night, peak at 5pm.
+
+Consider also:
+
+● How will casual riders save time, money or effort with an annual membership? Annual membership should make financial sense to casual riders.
+
+● How does annual membership fit into a casual members' lifestyle and value system? Annual membership can also be linked to users' lifestyle and values, e.g. health benefits of cycling, or cycling as a 'green' transportation method, or a way of getting around that gives freedom to move at any time of day without depending on cars, public transport and avoiding traffic jams.
+
+● Collecting additional feedback to deepen our insight into casual riders (e.g. age group, frequency of use, return or one-off customers, tourists?) and any disincentives or obstacles to purchasing annual membership they experience (e.g. high initial purchasing cost, cheaper to buy occasional ticket if use is only occasional). Consider also collecting additional feedback from members to understand Chicagoans' reasons for purchasing annual memebrship.
+
+● Looking further into the impact of the Covid-19 pandemic on casual riders’ motivation to use Cyclistic bikes. 
+
+● Launching the marketing strategy in February - March when people go back to biking to get around town.
