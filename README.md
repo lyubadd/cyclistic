@@ -3,6 +3,8 @@
 
 Lyubomira Derelieva
 
+Tableau data visualization here
+
 ### 1. Introduction
 
 Cyclistic is a **bike-share company operating in Chicago**. Since its creation in 2016, it has grown its fleet to **5,824 bicycles (classic and electric)** that are geotracked and locked into a **network of 692 stations across the city**. The bikes can be unlocked from any station and returned to any station anytime. The company sets itself apart by offering **alternative bikes for people with disabilities** and **riders who cannot use a standard two-wheeled bike**. 
