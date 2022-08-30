@@ -1,6 +1,8 @@
 # Cyclistic: From Casual Riders to Members
 ## Google Data Analytics Capstone Project
 
+Lyubomira Derelieva
+
 ### 1. Introduction
 
 Cyclistic is a **bike-share company operating in Chicago**. Since its creation in 2016, it has grown its fleet to **5,824 bicycles (classic and electric)** that are geotracked and locked into a **network of 692 stations across the city**. The bikes can be unlocked from any station and returned to any station anytime. The company sets itself apart by offering **alternative bikes for people with disabilities** and **riders who cannot use a standard two-wheeled bike**. 
@@ -447,23 +449,23 @@ Map (full interactive data visualization on Tableau Public here)
  
 ### 6. Recommendations 
 
-The data analysis reveals that in the past 12 months between May 2021 and April 2022 casual riders made up 44% of all Cyclistic users - holding big potential for converting casual riders into members.
+The data analysis reveals that in the past 12 months between May 2021 and April 2022 casual rides made up 44% of all Cyclistic rides - holding **big potential for converting casual riders into members**.
 
-To convert casual riders, the company should offer an annual membership product that is customized to their specific mobility needs characterized by: 
-            ● Longer rides.
-            ● Slight preference for electric bikes.
-            ● Seasonal: casual rides peak and overtake member rides from mid-May till mid-August. 
-            ● Casual riders are most active at the weekend, members - during the working week.
-            ● Higher level of activity on weekends and in the evening and night, peak at 5pm.
+To convert casual riders, the company should offer an **annual membership product customized to their specific mobility needs** characterized by: 
+* Longer rides.
+* Slight preference for electric bikes.
+* Seasonal: casual rides peak and overtake member rides from mid-May till mid-August. 
+* Casual riders are most active at the weekend, members - during the working week.
+* Higher level of activity on weekends and in the evening and night, peak at 5pm.
 
 Consider also:
 
-● How will casual riders save time, money or effort with an annual membership? Annual membership should make financial sense to casual riders.
+* How will casual riders **save time, money or effort** with an annual membership? Annual membership should ideally be financially advantageous to casual riders.
 
-● How does annual membership fit into a casual members' lifestyle and value system? Annual membership can also be linked to users' lifestyle and values, e.g. health benefits of cycling, or cycling as a 'green' transportation method, or a way of getting around that gives freedom to move at any time of day without depending on cars, public transport and avoiding traffic jams.
+* How does annual membership fit into a casual members' **lifestyle and value system**? Annual membership can also be linked to users' lifestyle and values, e.g. health benefits, or cycling as a **'green' transportation method**, or a way of getting around that gives **freedom to move** at any time of day without depending on cars, public transport and avoiding traffic jams.
 
-● Collecting additional feedback to deepen our insight into casual riders (e.g. age group, frequency of use, return or one-off customers, tourists?) and any disincentives or obstacles to purchasing annual membership they experience (e.g. high initial purchasing cost, cheaper to buy occasional ticket if use is only occasional). Consider also collecting additional feedback from members to understand Chicagoans' reasons for purchasing annual memebrship.
+* Collecting **additional feedback to deepen our insight into casual riders** (e.g. age group, frequency of use, return or one-off customers, tourists?) and any disincentives or obstacles to purchasing annual membership they experience (e.g. high initial purchasing cost, cheaper to buy occasional ticket if use is only occasional). Consider also collecting additional feedback from members to understand Chicagoans' reasons for purchasing annual memebrship.
 
-● Looking further into the impact of the Covid-19 pandemic on casual riders’ motivation to use Cyclistic bikes. 
+* Looking further into the **impact of the Covid-19 pandemic** on casual riders’ motivation to use Cyclistic bikes. 
 
-● Launching the marketing strategy in February - March when people go back to biking to get around town.
+* **Launching the marketing strategy in February - March** when people go back to biking to get around town.
