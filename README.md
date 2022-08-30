@@ -157,7 +157,6 @@ WHERE end_station_id IS NULL;
 ```
 
 The only fields where data is missing are those specifying the station names (start_station_id, start_station_name, end_station_id, end_station_name).  As the station names and IDs are not central to answer the business question and deleting these would lose valuable data for other observations, I kept the rides with the missing values for these fields.
-```
 
 * **clean the empty spaces** from the string fields
 
@@ -174,7 +173,7 @@ member_casual = TRIM (member_casual)
 WHERE TRUE;
 ```
 
-* deleted **trips with negative values** and **under 60 seconds**
+* delete **trips with negative values** and **under 60 seconds**
 
 When the clocks went back to standard time on November 7th 2021, the database did not automatically update so for the rides on that day the end time is earlier than the starting time. The data also included some false starts that lasted under 60 seconds.
 
@@ -184,7 +183,7 @@ WHERE ride_length_new < 1;
  ```
 This statement removed 91,883 rides.
  
-* deleted **trips over 24 hours** (which is forbidden by the system)
+* delete **trips over 24 hours** (which is forbidden by the system)
 
 ```
 DELETE FROM `leafy-star-345020.Cyclistic.202105_202204`
@@ -195,14 +194,14 @@ This statement removed 4,184 rides.
 
 As a final step in the Process phase, I **transformed the data** in order to **prepare it for the Analyze phase**.
  
-* Created **new column “ride_length”** in order to calculate the average ride length for casual riders vs members.
+* create a **new column “ride_length”** in order to calculate the average ride length for casual riders vs members.
  
  ```
 ALTER TABLE `leafy-star-345020.Cyclistic.202105_202204`
 ADD COLUMN ride_length_new integer;
  ```
  
-* Subtracted the started_at column from the ended_at to **calculate each ride’s length**.
+* subtract the started_at column from the ended_at to **calculate each ride’s length**.
  
  ```
 UPDATE `leafy-star-345020.Cyclistic.202105_202204`
@@ -210,14 +209,14 @@ SET ride_length_new = DATETIME_DIFF(ended_at, started_at, MINUTE)
 WHERE TRUE;
 ```
 
-* created **new column “day_of_week”**  in order to investigate the ride patterns of casual riders vs members throughout the week.
+* create a **new column “day_of_week”**  in order to investigate the ride patterns of casual riders vs members throughout the week.
 
 ```
 ALTER TABLE `leafy-star-345020.Cyclistic.202105_202204`
 ADD COLUMN day_of_week integer;
 ```
 
-* **determined the day of the week** that each ride started on (SUNDAY = 1)
+* **determine the day of the week** that each ride started on (SUNDAY = 1)
 
 ```
 UPDATE `leafy-star-345020.Cyclistic.202105_202204`
@@ -425,31 +424,8 @@ GROUP BY end_station_name
 ORDER BY num_rides DESC
 LIMIT 20;
 ```
-The top 20 start and end stations for casual riders are:
- 
-* Streeter Dr & Grand Ave
-* Millennium Park
-* Michigan Ave & Oak St
-* Shedd Aquarium
-* Theater on the Lake
-* Wells St & Concord Ln
-* DuSable Lake Shore Dr & Monroe St
-* DuSable Lake Shore Dr & North Blvd
-* Wabash Ave & Grand Ave
-* Clark St & Lincoln Ave
-* Wells St & Elm St
-* Clark St & Armitage Ave
-* Clark St & Elm St
-* Indiana Ave & Roosevelt Rd
-* Lake Shore Dr & North Blvd
-* New St & Illinois St
-* Dusable Harbor
-* Lake Shore Dr & Monroe St
-* Michigan Ave & Lake St
-* Michigan Ave & Washington St
 
- 
-Map (full interactive data visualization on Tableau Public here)
+**Complete interactive map available on Tableau Public** uder this link.
  
 ### 6. Recommendations 
 
