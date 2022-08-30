@@ -58,7 +58,7 @@ The data is **organized by individual trip** and it **covers 13 variables**:
 9 | start_lat | latitude of the starting station |
 10 | start_lng | longitude of the starting station |
 11 | end_lat | latitude of the end station |
-12 | end_lng longitude of the end station |
+12 | end_lng | longitude of the end station |
 13 | member_casual | type of user: member or casual rider |
 
 
