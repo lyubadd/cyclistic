@@ -1,7 +1,8 @@
 # Cyclistic: From Casual Riders to Members
 ## Google Data Analytics Capstone Project
 
-Lyubomira Derelieva
+Author: Lyubomira Derelieva
+Date: June 2022
 
 Tableau data visualization here
 
