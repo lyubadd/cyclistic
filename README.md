@@ -2,6 +2,7 @@
 ## Google Data Analytics Capstone Project
 
 Author: Lyubomira Derelieva
+
 Date: June 2022
 
 Tableau data visualization here
