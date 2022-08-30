@@ -135,7 +135,7 @@ No misspelt words were found.
 
 ```
 SELECT COUNT(DISTINCT ride_id)
-FROM  `leafy-star-345020.Cyclistic.202105_202204`
+FROM  `leafy-star-345020.Cyclistic.202105_202204`;
 ```
 
 There were no duplicate rides.  
