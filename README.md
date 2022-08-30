@@ -154,6 +154,8 @@ No errors were found.
 SELECT COUNT (*) AS missing_end_station_id
 FROM `leafy-star-345020.Cyclistic.202105_202204`
 WHERE end_station_id IS NULL;
+```
+
 The only fields where data is missing are those specifying the station names (start_station_id, start_station_name, end_station_id, end_station_name).  As the station names and IDs are not central to answer the business question and deleting these would lose valuable data for other observations, I kept the rides with the missing values for these fields.
 ```
 
