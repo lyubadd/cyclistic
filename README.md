@@ -3,7 +3,7 @@
 
 Author: Lyubomira Derelieva
 
-Date: June 2022
+Date: 21 June 2022
 
 Tableau data visualization here
 
