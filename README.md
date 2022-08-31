@@ -35,11 +35,11 @@ The **main metrics** this project will look at are:
 
 This project analyzes the Cyclistic **historical data** on **all bike trips from the past 12 months** covering the period from **May 2021 until April 2022**. 
 
-As such it represents the **full population of Cyclistic riders** - casual and member - in that time period.
+As such, it represents the **entire population of Cyclistic riders** - casual and member - in that period.
 
 The data is made **publicly available** by the company under [this link](https://divvy-tripdata.s3.amazonaws.com/index.html), making it **first-party data**.
 
-The data was analyzed in respect of **applicable data privacy laws**. No riders’ personally identifiable information was used in the analysis as per the [Data License Agreement](https://ride.divvybikes.com/data-license-agreement). 
+The data was analyzed in respect of **applicable data privacy laws**. The analysis used no riders’ personally identifiable information as per the [Data License Agreement](https://ride.divvybikes.com/data-license-agreement). 
 
 The data was stored by month on the server and was downloaded in 12 separate .csv files on the data analyst’s personal computer.
 
@@ -62,9 +62,9 @@ The data is **organized by individual trip** and it **covers 13 variables**:
 13 | member_casual | type of user: member or casual rider |
 
 
-The data includes all Cyclistic rides in the 12-month period broken down by member or casual rider. As such it is **comprehensive** enough to allow us to compare trends in behaviour between the two groups of users and answer the business question.
+The data includes all Cyclistic rides in the 12-month period broken down by member or casual rider. As it is **comprehensive** enough to allow us to compare trends in behavior between the two groups of users and answer the business question.
 
-**No bias or credibility issues** were found. The data is updated on a monthly basis, so it is also **current**. 
+**No bias or credibility issues** were found. The company updates the data monthly, so it is also **current**. 
 
 There are, however, certain **limitations** to the data:
 * It does not show the use of **accessible riding options**.
