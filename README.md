@@ -377,7 +377,7 @@ GROUP BY hour, member_casual
 ORDER BY hour ASC;
 ```
 
-Casual rides increase steadily as the day goes by peaking at 5pm. They are also more active at night. Member rides peak during rush hours - both morning and evening - but like casual members the highest peak is at 5pm.
+Casual rides increase steadily as the day goes by peaking at 5 pm. They are also more active at night. Member rides peak during rush hours - both morning and evening - but like casual members the highest peak is at 5 pm.
 
 7. What are the **most popular stations** for casual users compared to those of members? 
 
@@ -427,22 +427,22 @@ ORDER BY num_rides DESC
 LIMIT 20;
 ```
 
-**Complete interactive map available on Tableau Public** uder this link.
+**Complete interactive map available on Tableau Public** under this link.
  
 ### 6. Recommendations 
 
-The data analysis reveals that in the past 12 months between May 2021 and April 2022 casual rides made up 44% of all Cyclistic rides - holding **big potential for converting casual riders into members**.
+The data analysis reveals that in the past 12 months, between May 2021 and April 2022, casual rides made up 44% of all Cyclistic rides - holding **big potential for converting casual riders into members**.
 
 To convert casual riders, the company should offer an **annual membership product customized to their specific mobility needs** characterized by: 
 * Longer rides.
 * Slight preference for electric bikes.
 * Seasonal: casual rides peak and overtake member rides from mid-May till mid-August. 
 * Casual riders are most active at the weekend, members - during the working week.
-* Higher level of activity on weekends and in the evening and night, peak at 5pm.
+* Higher level of activity on weekends and in the evening and night, peak at 5 pm.
 
 Consider also:
 
-* How will casual riders **save time, money or effort** with an annual membership? Annual membership should ideally be financially advantageous to casual riders.
+* How will casual riders **save time, money, or effort** with an annual membership? Annual membership should ideally be financially advantageous to casual riders.
 
 * How does annual membership fit into a casual members' **lifestyle and value system**? Annual membership can also be linked to users' lifestyle and values, e.g. health benefits, or cycling as a **'green' transportation method**, or a way of getting around that gives **freedom to move** at any time of day without depending on cars, public transport and avoiding traffic jams.
 
