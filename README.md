@@ -39,7 +39,7 @@ As such, it represents the **entire population of Cyclistic riders** - casual an
 
 The data is **first-party data** made **publicly available** by the company under [this link](https://divvy-tripdata.s3.amazonaws.com/index.html).
 
-The data was analyzed in respect of **applicable data privacy laws**. The analysis used no riders’ personally identifiable information as per the [Data License Agreement](https://ride.divvybikes.com/data-license-agreement). 
+The data was analyzed in respect of **applicable data privacy laws**. The analysis used no riders’ personally identifiable information per the [Data License Agreement](https://ride.divvybikes.com/data-license-agreement). 
 
 The data was stored by month on the server and was downloaded in 12 separate .csv files on the data analyst’s personal computer.
 
