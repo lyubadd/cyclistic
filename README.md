@@ -431,23 +431,22 @@ LIMIT 20;
  
 ### 6. Recommendations 
 
-The data analysis reveals that in the past 12 months, between May 2021 and April 2022, casual rides made up 44% of all Cyclistic rides - holding **big potential for converting casual riders into members**.
+The data analysis reveals a **significant potential for converting casual riders into members**. In the past 12 months (May 2021 - April 2022), **casual rides made up 44% of all Cyclistic rides**. 
 
-To convert casual riders, the company should offer an **annual membership product customized to their specific mobility needs** characterized by: 
+The **new marketing strategy should focus on annual membership options that meet casual riders' particular mobility needs**:
 * Longer rides.
 * Slight preference for electric bikes.
 * Seasonal: casual rides peak and overtake member rides from mid-May till mid-August. 
-* Casual riders are most active at the weekend, members - during the working week.
+* Casual riders are most active at the weekend and members - during the working week.
 * Higher level of activity on weekends and in the evening and night, peak at 5 pm.
 
-Consider also:
+**Launch the marketing strategy in February - March** when people go back to biking to get around town.
 
-* How will casual riders **save time, money, or effort** with an annual membership? Annual membership should ideally be financially advantageous to casual riders.
-
-* How does annual membership fit into a casual members' **lifestyle and value system**? Annual membership can also be linked to users' lifestyle and values, e.g. health benefits, or cycling as a **'green' transportation method**, or a way of getting around that gives **freedom to move** at any time of day without depending on cars, public transport and avoiding traffic jams.
-
-* Collecting **additional feedback to deepen our insight into casual riders** (e.g. age group, frequency of use, return or one-off customers, tourists?) and any disincentives or obstacles to purchasing annual membership they experience (e.g. high initial purchasing cost, cheaper to buy occasional ticket if use is only occasional). Consider also collecting additional feedback from members to understand Chicagoans' reasons for purchasing annual memebrship.
-
-* Looking further into the **impact of the Covid-19 pandemic** on casual riders’ motivation to use Cyclistic bikes. 
-
-* **Launching the marketing strategy in February - March** when people go back to biking to get around town.
+Consider collecting **additional data to deepen insights**:
+* age group
+* gender
+* frequency of use
+* return or one-off customers
+* obstacles to purchasing annual membership (e.g., high initial purchasing cost)
+* members' reasons for purchasing a membership
+* impact of the coronavirus pandemic.
