@@ -13,13 +13,13 @@ Cyclistic is a **bike-share company operating in Chicago**. Since its creation i
 
 Cyclistic’s **current marketing strategy** relies on building general awareness and appealing to **broad consumer segments**, including by offering **flexible pricing plans: single-ride passes, full-day passes, and annual memberships**. Customers who purchase **single-ride** or **full-day passes** are referred to as **casual riders**. Customers who purchase **annual memberships** are **Cyclistic members**.
 
-Cyclistic’s finance analysts, however, have concluded that **annual members are much more profitable than casual riders**. Although the pricing flexibility helps Cyclistic attract more customers, the head of marketing believes that **maximizing the number of annual members will be key to future growth**. Thus, the company has decided to **design a new marketing strategy** aimed at **converting casual riders into annual members**.
+Cyclistic’s finance analysts have concluded that **annual members are much more profitable than casual riders**. Although the pricing flexibility helps Cyclistic attract more customers, **maximizing the number of annual members will be key to future growth**. Therefore, the company has decided to **design a new marketing strategy** to **convert casual riders into annual members**.
 
 ### 2. Business Task
 
 One of the three questions that will guide the design of the future marketing program is: **How do annual members and casual riders use Cyclistic bikes differently?**
 
-This is the **business question to which this case study is dedicated**. The insights reached will inform the company’s new marketing strategy to convert casual riders into annual members. 
+This is the **business question to which this case study is dedicated**. The insights reached will inform the company’s strategy to convert casual riders into annual members. 
 
 The **key stakeholder** in this project is the Cyclistic marketing team headed by Ms Moreno.
 
@@ -37,7 +37,7 @@ This project analyzes the Cyclistic **historical data** on **all bike trips from
 
 As such, it represents the **entire population of Cyclistic riders** - casual and member - in that period.
 
-The data is made **publicly available** by the company under [this link](https://divvy-tripdata.s3.amazonaws.com/index.html), making it **first-party data**.
+The data is **first-party data** made **publicly available** by the company under [this link](https://divvy-tripdata.s3.amazonaws.com/index.html).
 
 The data was analyzed in respect of **applicable data privacy laws**. The analysis used no riders’ personally identifiable information as per the [Data License Agreement](https://ride.divvybikes.com/data-license-agreement). 
 
@@ -61,10 +61,9 @@ The data is **organized by individual trip** and it **covers 13 variables**:
 12 | end_lng | longitude of the end station |
 13 | member_casual | type of user: member or casual rider |
 
-
 The data includes all Cyclistic rides in the 12-month period broken down by member or casual rider. As it is **comprehensive** enough to allow us to compare trends in behavior between the two groups of users and answer the business question.
 
-**No bias or credibility issues** were found. The company updates the data monthly, so it is also **current**. 
+The data is **current**, as the company updates it monthly. **No bias or credibility issues** were found. 
 
 There are, however, certain **limitations** to the data:
 * It does not show the use of **accessible riding options**.
