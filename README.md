@@ -427,7 +427,7 @@ ORDER BY num_rides DESC
 LIMIT 20;
 ```
 
-**Complete interactive map available on Tableau Public** under this link.
+**Complete interactive map available on Tableau Public** under [this link](https://public.tableau.com/app/profile/lyuba3471/viz/TopStations_StartandEnd_AllUsers/CyclisticBikeShareFromCasualRiderstoMembers).
  
 ### 6. Recommendations 
 
