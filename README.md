@@ -9,21 +9,21 @@ Tableau data visualization available [here](https://public.tableau.com/app/profi
 
 ### 1. Introduction
 
-Cyclistic is a **bike-share company operating in Chicago**. Since its creation in 2016, it has grown its fleet to **5,824 bicycles (classic and electric)** that are geotracked and locked into a **network of 692 stations across the city**. The bikes can be unlocked from any station and returned to any station anytime. The company sets itself apart by offering **alternative bikes for people with disabilities** and **riders who cannot use a standard two-wheeled bike**. 
+Cyclistic is a **bike-share company in Chicago**. Created in 2016, it has a fleet of **5,824 bicycles (classic and electric)** that are geotracked and locked into a **network of 692 stations across the city**. The bikes can be unlocked from any station and returned to any station anytime. The company sets itself apart by offering **alternative bikes for people with disabilities** and **riders who cannot use a standard two-wheeled bike**. 
 
-Cyclistic’s **current marketing strategy** relies on building general awareness and appealing to **broad consumer segments**, including by offering **flexible pricing plans: single-ride passes, full-day passes, and annual memberships**. Customers who purchase **single-ride** or **full-day passes** are referred to as **casual riders**. Customers who purchase **annual memberships** are **Cyclistic members**.
+Cyclistic’s **current marketing strategy** relies on building general awareness and appealing to **broad consumer segments**, including by offering **flexible pricing plans: single-ride passes, full-day passes, and annual memberships**. Customers who purchase **single-ride** or **full-day passes** are referred to as **casual riders**, and customers who purchase **annual memberships** - **Cyclistic members**.
 
 Cyclistic’s finance analysts have concluded that **annual members are much more profitable than casual riders**. Although the pricing flexibility helps Cyclistic attract more customers, **maximizing the number of annual members will be key to future growth**. Therefore, the company has decided to **design a new marketing strategy** to **convert casual riders into annual members**.
 
 ### 2. Business Task
 
-One of the three questions that will guide the design of the future marketing program is: **How do annual members and casual riders use Cyclistic bikes differently?**
+This case study's business question is: **How do annual members and casual riders use Cyclistic bikes differently?**
 
-This is the **business question to which this case study is dedicated**. The insights reached will inform the company’s strategy to convert casual riders into annual members. 
+The insights reached will inform the company’s strategy to convert casual riders into annual members. 
 
-The **key stakeholder** in this project is the Cyclistic marketing team headed by Ms Moreno.
+The **key stakeholder** in this project is the Cyclistic marketing team.
 
-The **main metrics** this project will look at are:
+The **main metrics** this project looks at are:
 * **Ride length** for casual riders vs annual members
 * Preference for **classic or electric bikes** of casual riders vs annual members
 * Ridership **trends by month** for casual riders vs annual members
@@ -31,19 +31,19 @@ The **main metrics** this project will look at are:
 * Ridership **trends by time of day** for casual riders vs annual members
 * **Most popular stations** for casual riders vs annual members
 
-### 3. Prepare Data
+### 3. Data Preparation
 
-This project analyzes the Cyclistic **historical data** on **all bike trips from the past 12 months** covering the period from **May 2021 until April 2022**. 
+This project analyzes Cyclistic **historical data** about **all bike trips from the past 12 months** covering the period from **May 2021 until April 2022**. 
 
 As such, it represents the **entire population of Cyclistic riders** - casual and member - in that period.
 
-The data is **first-party data** made **publicly available** by the company under [this link](https://divvy-tripdata.s3.amazonaws.com/index.html).
+The data are **first-party** and are made **publicly available** by the company under [this link](https://divvy-tripdata.s3.amazonaws.com/index.html).
 
-The data was analyzed in respect of **applicable data privacy laws**. The analysis used no riders’ personally identifiable information per the [Data License Agreement](https://ride.divvybikes.com/data-license-agreement). 
+The data were analyzed in respect of **applicable data privacy laws**. The analysis used no riders’ personally identifiable information per the [Data License Agreement](https://ride.divvybikes.com/data-license-agreement). 
 
-The data was stored by month on the server and was downloaded in 12 separate .csv files on the data analyst’s personal computer.
+The data were stored by month on the server and downloaded in 12 separate .csv files on the analyst’s personal computer.
 
-The data is **organized by individual trip** and it **covers 13 variables**:
+The data are **organized by individual trip** and **cover 13 variables**:
 
 | number| variable | description |
 | ----- | --------|------------- |
@@ -61,16 +61,16 @@ The data is **organized by individual trip** and it **covers 13 variables**:
 12 | end_lng | longitude of the end station |
 13 | member_casual | type of user: member or casual rider |
 
-The data includes all Cyclistic rides in the 12-month period broken down by member or casual rider. As it is **comprehensive** enough to allow us to compare trends in behavior between the two groups of users and answer the business question.
+The data include all Cyclistic rides in the 12-month period broken down by member or casual rider. As such, they are **comprehensive** enough to allow us to compare trends in behavior between the two groups of users and answer the business question.
 
-The data is **current**, as the company updates it monthly. **No bias or credibility issues** were found. 
+The data are **current**, as the company updates them monthly. **No bias or credibility issues** were found. 
 
 There are, however, certain **limitations** to the data:
-* It does not show the use of **accessible riding options**.
-* It is **incomplete for some journeys**.
-* It does not break down between day-passes and single passes or one-off and return customers that would have provided **more granular insights**.
+* They do not show the use of **accessible riding options**.
+* They are **incomplete for some journeys**.
+* There is no break down between day-passes and single passes or one-off and return customers that would have provided **more granular insights**.
 
-### 4. Process Data
+### 4. Data Processing
 
 Due to the large amount of data required for the analysis, I executed the project in **SQL BigQuery** on the Google Cloud Platform. I uploaded the 12 tables of data (corresponding to the 12 months under analysis) on the Google Cloud and BigQuery handled them without an issue. 
 
@@ -122,7 +122,7 @@ FROM `leafy-star-345020.Cyclistic.2022_04`;
 
 The merged document included **observations about 5,757,551 rides**.  
 
-Next, I double checked that nothing got lost in the merging process. **Nothing had got lost**.
+Next, I double checked that nothing got lost in the merging process.
 
 Then, I proceeded with **cleaning the merged data**. I recorded all **cleaning checks and fixes as follows**: 
  
@@ -157,7 +157,7 @@ FROM `leafy-star-345020.Cyclistic.202105_202204`
 WHERE end_station_id IS NULL;
 ```
 
-The only fields where data is missing are those specifying the station names (start_station_id, start_station_name, end_station_id, end_station_name).  As the station names and IDs are not central to answer the business question and deleting these would lose valuable data for other observations, I kept the rides with the missing values for these fields.
+The only fields where data are missing are those specifying the station names (start_station_id, start_station_name, end_station_id, end_station_name).  As the station names and IDs are not central to answer the business question and deleting these would lose valuable data for other observations, I kept the rides with the missing values for these fields.
 
 * **clean the empty spaces** from the string fields
 
@@ -193,7 +193,7 @@ WHERE ride_length_new > 1440;
 
 This statement removed 4,184 rides.
 
-As a final step in the Process phase, I **transformed the data** in order to **prepare it for the Analyze phase**.
+As a final step in the Process phase, I **transformed the data** in order to **prepare them for the Analyze phase**.
  
 * create a **new column “ride_length”** in order to calculate the average ride length for casual riders vs members.
  
@@ -225,14 +225,14 @@ SET day_of_week = EXTRACT(DAYOFWEEK FROM started_at)
 WHERE TRUE;
 ```
 
-I double checked the operation was executed correctly by
+I double checked the operation was executed correctly.
 
 ```
 SELECT DISTINCT day_of_week
 FROM `leafy-star-345020.Cyclistic.202105_202204`;
 ```
 
-And manually checked the first date in the calendar to see if 05/23/2021 was indeed a Sunday. Everything was correct.
+Checked the first date in the calendar to see if 05/23/2021 was indeed a Sunday. Everything was correct.
 
 * created **new column “hour”** 
 
@@ -446,6 +446,7 @@ Consider collecting **additional data to deepen insights**:
 * gender
 * frequency of use
 * return or one-off customers
+* tourists/visitors or locals
 * obstacles to purchasing annual membership (e.g., high initial purchasing cost)
 * members' reasons for purchasing a membership
 * impact of the coronavirus pandemic.
